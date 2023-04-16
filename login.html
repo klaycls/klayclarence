@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>ITEC 60 - Login Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" required>
+          <span id = user-error style = "color: red; display: none;"></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" required>
+          <span id = password error ></span>
+          <label>Password</label>
+        </div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          <a href="#"> </a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+        function submit(){
+            const Username = document.getElementById("username").value;
+            const usererror = document.getElementById("UserError");
+            const Password = document.getElementById("password").value;
+            const passerror = document.getElementById("PassError");
+    
+            if(Username.trim() == ""){
+                usererror.style.display = "block";
+            } else{
+                usererror.style.display = "none";
+            }
+    
+            if(Password.trim() == ""){
+                passerror.style.display = "block";
+            } else{
+                passerror.style.display = "none";
+            }
+    
+            if (Username.trim() !== "" && Password.trim() !== ""){
+                alert("Logged in successfully!")
+    
+                window.location.href = "login.html";
+            }
+            else alert("Login unsucessful.");
+        }
+      </script>
+
+  </body>
+</html>
